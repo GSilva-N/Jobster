@@ -12,8 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-
-
 @Entity
 @Table(name="usuario")
 public class Usuario {
@@ -27,22 +25,16 @@ public class Usuario {
 	private String nome_completo;
 	@Column
 	@NotNull
-	private String email;
+	private String email;	
 	
-	
-	@OneToMany
-	@JoinColumn(name="id_usuario")
-	public List<Postagem> getPostagem() {
-		return postagem;
-	}
-	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
-	}
 	@Column
 	@NotNull
 	private String senha;
-	
+
+	@OneToMany
+	@JoinColumn(name="id_usuario")
 	private List<Postagem> postagem;
+	
 	
 	public Long getId_usuario() {
 		return id_usuario;
@@ -69,6 +61,10 @@ public class Usuario {
 		this.senha = senha;
 	}
 	
-	
-	
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
 }

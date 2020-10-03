@@ -38,6 +38,22 @@ public class Postagem {
 	@JoinColumn(name="id_tema")
 	private Tema tema;
 	
+	public Tema getTema() {
+		return tema;
+	}
+
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 	@ManyToOne
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;

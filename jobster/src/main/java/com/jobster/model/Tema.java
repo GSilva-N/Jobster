@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="tema")
@@ -23,7 +25,9 @@ public class Tema {
 	private String titulo;
 	@Column 
 	private String descricao;
+	
 	@Column 
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
 	@OneToMany
@@ -31,12 +35,6 @@ public class Tema {
 	private List<Postagem> postagem;
 	
 	
-	public List<Postagem> getPostagem() {
-		return postagem;
-	}
-	public void setPostagem(List<Postagem> postagem) {
-		this.postagem = postagem;
-	}
 	public Long getId_tema() {
 		return id_tema;
 	}
@@ -62,6 +60,11 @@ public class Tema {
 		this.data = data;
 	}
 	
-	
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
 
 }
