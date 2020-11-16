@@ -39,7 +39,7 @@ public class Postagem {
 	private Blob imagem;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("tema")
+	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 	
 	@ManyToOne
