@@ -2,17 +2,10 @@ package com.jobster.model;
 
 public class UsuarioLogin {
 	
-	private String nome;
 	private String email;
 	private String senha;
 	private String token;
 	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -32,6 +25,4 @@ public class UsuarioLogin {
 		this.token = token;
 	}
 	
-	
-
 }

@@ -25,11 +25,11 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column 
-	private String titulo;
+	private String titulo; //Titulo = Area
 	@Column 
 	private String descricao;
 	
-	@Column 
+	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date data = new java.sql.Date(System.currentTimeMillis());
 	
