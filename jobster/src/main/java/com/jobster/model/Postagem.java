@@ -1,6 +1,5 @@
 package com.jobster.model;
 
-import java.sql.Blob;
 
 import javax.annotation.Generated;
 import javax.persistence.CascadeType;
@@ -30,13 +29,13 @@ public class Postagem {
 	private String contato;
 	
 	@Column
+	private String telefone;
+	
+	@Column
 	private String portfolio;
 	
 	@Column
 	private String modalidade;
-	
-	@Column
-	private Blob imagem;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
@@ -63,6 +62,14 @@ public class Postagem {
 		this.contato = contato;
 	}
 
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
 	public String getPortfolio() {
 		return portfolio;
 	}
@@ -79,14 +86,6 @@ public class Postagem {
 		this.modalidade = modalidade;
 	}
 
-	public Blob getImagem() {
-		return imagem;
-	}
-
-	public void setImagem(Blob imagem) {
-		this.imagem = imagem;
-	}
-
 	public Tema getTema() {
 		return tema;
 	}
@@ -101,6 +100,6 @@ public class Postagem {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
-	}
+	}	
 	
 }
